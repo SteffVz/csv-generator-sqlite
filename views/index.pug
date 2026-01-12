@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1 CSV Generator
+
+  form(method="POST", action="/generate")
+    label(for="count") Number of records:
+    br
+    input(type="number", name="count", required)
+    br
+    br
+    button(type="submit") Generate CSV
+
+  hr
+  h2 Upload CSV to SQLite
+
+  form(method="POST", action="/upload", enctype="multipart/form-data")
+    input(type="file", name="csvfile", required)
+    br
+    br
+    button(type="submit") Upload CSV
